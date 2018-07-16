@@ -2,14 +2,12 @@ require 'pry'
 
 def my_find(collection)
   i = 0
-  ans = nil
   while i<collection.size
     res = yield(collection[i])
     if res == true
-      ans = collection[i]
-      break
+      return collection[i]
     end
     i+=1
   end
-  ans
+  return nil
 end
